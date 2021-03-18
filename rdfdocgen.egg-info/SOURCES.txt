@@ -1,0 +1,8 @@
+setup.py
+rdfdocgen/__init__.py
+rdfdocgen/docgen.py
+rdfdocgen.egg-info/PKG-INFO
+rdfdocgen.egg-info/SOURCES.txt
+rdfdocgen.egg-info/dependency_links.txt
+rdfdocgen.egg-info/requires.txt
+rdfdocgen.egg-info/top_level.txt

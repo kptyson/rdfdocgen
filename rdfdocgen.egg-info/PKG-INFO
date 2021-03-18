@@ -1,0 +1,11 @@
+Metadata-Version: 1.2
+Name: rdfdocgen
+Version: 1.0.0
+Summary: Create MS Word documentation from RDF files
+Home-page: UNKNOWN
+Author: Kevin Tyson
+Author-email: kevin.tyson@industrialsemantics.com
+License: MIT License
+Description: UNKNOWN
+Platform: UNKNOWN
+Requires-Python: >=3

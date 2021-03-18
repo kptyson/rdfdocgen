@@ -1,0 +1,7 @@
+click
+rdflib
+docx
+re
+pandas
+logging
+os

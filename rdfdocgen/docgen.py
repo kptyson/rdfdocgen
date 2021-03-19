@@ -29,8 +29,12 @@ def populate_conjunctive_graph(directory):
     return g
 
 
+name_table = dict()   # Glossary entries
+
+
 def try_qname(g, o):
     try:
+        name_table.update({g.qname(o): o})
         return g.qname(o)
     except ValueError:
         return o
@@ -91,7 +95,7 @@ def do_work(directory, output, title):
     hdr_cells = table.rows[0].cells
     hdr_cells[0].text = 'Qualified Name'
     hdr_cells[1].text = 'IRI'
-    for i,r in ntdf.iterrows():
+    for i, r in ntdf.iterrows():
         row_cells = table.add_row().cells
         row_cells[0].text = str(i)
         row_cells[1].text = r.IRI

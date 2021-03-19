@@ -81,6 +81,20 @@ def do_work(directory, output, title):
                     elif type(o) == BNode:
                         process_blank_node(gr.iloc[0], o, document)
                         # process_blank_node(gr, o, document)
+    # Create the glossary
+    ntdf = pd.DataFrame([(k, name_table[k]) for k in name_table],
+                        columns=['Qualified Name',
+                                 'IRI']).sort_values(['Qualified Name',
+                                                      'IRI']).set_index(['Qualified Name'])
+    document.add_heading('Glossary', level=1)
+    table = document.add_table(rows=1, cols=2)
+    hdr_cells = table.rows[0].cells
+    hdr_cells[0].text = 'Qualified Name'
+    hdr_cells[1].text = 'IRI'
+    for i,r in ntdf.iterrows():
+        row_cells = table.add_row().cells
+        row_cells[0].text = str(i)
+        row_cells[1].text = r.IRI
 
     logger.info('Saving %s' % output)
     document.save(output)
